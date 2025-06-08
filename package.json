@@ -1,0 +1,29 @@
+{
+  "name": "devanshverma9",
+  "version": "1.0.0",
+  "description": "cli for devansh's resume",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc -b && node dist/index.js"
+  },
+  "bin": {
+    "devanshverma09": "./dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "resume",
+    "devansh"
+  ],
+  "author": "Devansh",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30"
+  }
+}
