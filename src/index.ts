@@ -3,7 +3,6 @@
 import chalk from "chalk";
 import boxen from "boxen";
 import { Resume } from "./types";
-import stringWidth from "string-width";
 
 const resume: Resume = {
   name: "Devansh Verma",
@@ -30,8 +29,8 @@ const resume: Resume = {
     },
   ],
   skills: {
-    Frameworks: ["React", "Next.js", "Node.js", "Express", "Django"],
-    Languages: ["JavaScript", "TypeScript", "Python", "Java", "C++"],
+    Frameworks: ["React", "Next.js", "Node.js", "Express"],
+    Languages: ["JavaScript", "TypeScript"],
     Databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
     Tools: ["Git", "Docker", "AWS", "CI/CD", "REST APIs"],
     SoftSkills: [
@@ -79,29 +78,17 @@ const resume: Resume = {
 };
 
 function displayResume(): void {
-  const terminalWidth = process.stdout.columns || 80;
-  function centerText(text: string): string {
-    const visibleLength = stringWidth(text);
-    const leftPadding = Math.floor((terminalWidth - visibleLength) / 2);
-    return " ".repeat(leftPadding > 0 ? leftPadding : 0) + text;
-  }
   console.clear();
 
   // Header
   const nameLine = chalk.bold.cyan(resume.name);
   const titleLine = chalk.white(resume.title);
-
-  const centeredName = centerText(nameLine);
-  const centeredTitle = centerText(titleLine);
-
-  const header: string = `${centeredName}\n${centeredTitle}`;
+  const header: string = `${nameLine}\n${titleLine}`;
 
   // Contact
   const contactLine = `📧 ${resume.contact.email}  📶 ${resume.contact.phone}  💼 ${resume.contact.linkedin}  🐙 ${resume.contact.github}`;
-  const contactColored = chalk.white(contactLine);
-  const centeredContact = centerText(contactColored);
 
-  const contact = centeredContact;
+  const contact = contactLine;
 
   // Education
   let educationText: string = chalk.yellow.bold("\nEDUCATION\n");

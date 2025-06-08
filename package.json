@@ -1,22 +1,23 @@
 {
-  "name": "devanshverma9",
-  "version": "1.0.0",
-  "description": "cli for devansh's resume",
-  "main": "src/index.js",
+  "name": "@devanshverma9",
+  "version": "1.0.1",
+  "description": "A CLI to view Devansh Verma's resume directly in the terminal.",
+  "main": "dist/index.js",
+  "bin": {
+    "@devanshverma9": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsc -b && node dist/index.js"
-  },
-  "bin": {
-    "devanshverma09": "./dist/index.js"
+    "dev": "tsc -b && node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "cli",
     "resume",
     "devansh"
   ],
-  "author": "Devansh",
+  "author": "Devansh Verma",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -24,6 +25,8 @@
     "chalk": "^5.4.1"
   },
   "devDependencies": {
-    "@types/node": "^22.15.30"
+    "@types/node": "^22.15.30",
+    "typescript": "^5.5.x",
+    "ts-node": "^10.9.2"
   }
 }
